@@ -25,11 +25,11 @@ Api para gestionar los sorteos.
 -	En el archivo de propiedades en la ruta sorteo-api/src/main/resources/application.properties. Se debe configurar:
 
 -	Se configura el driver según la versión de mySQL. 
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+    - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 -	Se configura la url de la base de datos, el usuario y la contraseña.
-spring.datasource.url=jdbc:mysql://localhost:3306/premiodb?useSSL=false, 
-spring.datasource.username=root, 
-spring.datasource.password=12345678
+    - spring.datasource.url=jdbc:mysql://localhost:3306/premiodb?useSSL=false
+    - spring.datasource.username=root
+    - spring.datasource.password=12345678
 
 
 # Url servicios
