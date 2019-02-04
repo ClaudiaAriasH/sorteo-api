@@ -23,7 +23,7 @@ public class PersonasController {
     public List<Persona> buscarTodos() {
         return servicePersonas.buscarTodos();
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Persona buscarPorId(@PathVariable("id") int idPersona) {
         return servicePersonas.buscarPorId(idPersona);
@@ -36,22 +36,15 @@ public class PersonasController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public Persona modificar(@RequestBody  Persona persona) {
+    public Persona modificar(@RequestBody Persona persona) {
         servicePersonas.guardar(persona);
         return persona;
     }
-    
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String eliminar(@PathVariable("id") int idPersona) {
         servicePersonas.eliminar(idPersona);
         return "Registro Eliminado";
     }
-
-    
-//     @DeleteMapping("/albums/{id}")
-//     public String eliminar(@PathVariable("id") int idPersona) {
-//     servicePersonas.eliminar(idPersona);
-//     return "Registro Eliminado";
-//     }
 
 }

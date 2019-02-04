@@ -35,11 +35,4 @@ public class PremiosController {
         return premio;
     }
 
-    //
-    // @DeleteMapping("/albums/{id}")
-    // public String eliminar(@PathVariable("id") int idAlbum) {
-    // serviceAlbums.eliminar(idAlbum);
-    // return "Registro Eliminado";
-    // }
-
 }

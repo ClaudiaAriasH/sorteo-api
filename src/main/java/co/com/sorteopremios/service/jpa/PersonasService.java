@@ -1,7 +1,6 @@
 package co.com.sorteopremios.service.jpa;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,11 +32,7 @@ public class PersonasService implements IPersonasService {
 
     @Override
     public Persona buscarPorId(int idPersona) {
-        Optional<Persona> persona = repoPersonas.findById(idPersona);
-//        if (persona.isPresent()) {
-//            
-//        }
-        return persona.get();
+        return repoPersonas.findById(idPersona).get();
     }
 
 }

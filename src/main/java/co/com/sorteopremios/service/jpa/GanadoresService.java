@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import co.com.sorteopremios.dto.Ganadores;
 import co.com.sorteopremios.entity.Persona;
+import co.com.sorteopremios.entity.PersonaPremio;
 import co.com.sorteopremios.entity.Premio;
+import co.com.sorteopremios.repository.PersonaPremioRepository;
 import co.com.sorteopremios.service.IGanadoresService;
 
 @Service
@@ -24,8 +26,8 @@ public class GanadoresService implements IGanadoresService {
     @Autowired
     private PremiosService servPremio;
 
-    // @Autowired
-    // private PremioPersonaRepository premioPersonaRepository;
+    @Autowired
+    private PersonaPremioRepository repoPersonaPremio;
 
     @Override
     public List<Ganadores> sortearGanadores() {
@@ -42,14 +44,20 @@ public class GanadoresService implements IGanadoresService {
                     ganador.setNombre(persona.getNombres() + " " + persona.getApellidos());
                     ganador.setPremio(premio.getDescripcion());
                     ganadores.add(ganador);
-                    persona.getPremios().add(premio);
-                    servPersona.guardar(persona);
+                    guardarPersonaPremio(persona, premio);
                 } else {
                     break;
                 }
             }
         }
         return ganadores;
+    }
+
+    private void guardarPersonaPremio(Persona persona, Premio premio) {
+        PersonaPremio personaPremio = new PersonaPremio();
+        personaPremio.setIdPersona(persona.getId());
+        personaPremio.setIdPremio(premio.getCodigo());
+        repoPersonaPremio.save(personaPremio);
     }
 
     private Premio obtenerPremio(List<Premio> premios) {
@@ -62,7 +70,7 @@ public class GanadoresService implements IGanadoresService {
             premio = premios.get(randomNum);
             int cantidadActual = premio.getCantidad();
             premio.setCantidad(cantidadActual - 1);
-            // servPremio.actualizar(premio);
+            servPremio.actualizar(premio);
         }
         return premio;
     }
