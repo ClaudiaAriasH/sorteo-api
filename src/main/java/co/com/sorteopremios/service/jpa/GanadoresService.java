@@ -37,7 +37,8 @@ public class GanadoresService implements IGanadoresService {
         List<Ganadores> ganadores = new ArrayList<>();
 
         for (Persona persona : personas) {
-            if (persona.getPremios().isEmpty()) {
+            long totalPremios = repoPersonaPremio.countByIdPersona(persona.getId());
+            if (totalPremios == 0) {
                 Premio premio = obtenerPremio(premios);
                 if (premio != null) {
                     Ganadores ganador = new Ganadores();

@@ -6,4 +6,6 @@ import co.com.sorteopremios.entity.PersonaPremio;
 
 public interface  PersonaPremioRepository extends JpaRepository<PersonaPremio, Integer> {
 
+    long countByIdPersona(Integer idPersona);
+
 }

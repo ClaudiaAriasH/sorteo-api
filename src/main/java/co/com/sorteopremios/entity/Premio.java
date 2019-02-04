@@ -1,15 +1,9 @@
 package co.com.sorteopremios.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,9 +15,6 @@ public class Premio {
     private Integer codigo;
     private String descripcion;
     private Integer cantidad;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "premios")
-    private Set<Persona> personas = new HashSet<>();
 
     public Integer getCodigo() {
         return codigo;
@@ -47,14 +38,6 @@ public class Premio {
 
     public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
-    }
-
-    public Set<Persona> getPersonas() {
-        return personas;
-    }
-
-    public void setPersonas(Set<Persona> personas) {
-        this.personas = personas;
     }
 
     @Override
