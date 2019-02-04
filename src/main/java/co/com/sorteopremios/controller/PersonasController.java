@@ -43,8 +43,7 @@ public class PersonasController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public String eliminar(@PathVariable("id") int idPersona) {
-        servicePersonas.eliminar(idPersona);
-        return "Registro Eliminado";
+        return servicePersonas.eliminar(idPersona);
     }
 
 }

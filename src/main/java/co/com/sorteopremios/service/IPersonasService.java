@@ -11,6 +11,6 @@ public interface IPersonasService {
 
     void guardar(Persona persona);
 
-    void eliminar(int idPersona);
+    String eliminar(int idPersona);
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.com.sorteopremios.entity.Persona;
+import co.com.sorteopremios.repository.PersonaPremioRepository;
 import co.com.sorteopremios.repository.PersonaRepository;
 import co.com.sorteopremios.service.IPersonasService;
 
@@ -14,6 +15,9 @@ public class PersonasService implements IPersonasService {
 
     @Autowired
     private PersonaRepository repoPersonas;
+
+    @Autowired
+    private PersonaPremioRepository repoPersonaPremio;
 
     @Override
     public List<Persona> buscarTodos() {
@@ -26,8 +30,15 @@ public class PersonasService implements IPersonasService {
     }
 
     @Override
-    public void eliminar(int idPersona) {
-        repoPersonas.deleteById(idPersona);
+    public String eliminar(int idPersona) {
+        String mensaje = "Registro eliminado correctamente";
+        long tienePremios = repoPersonaPremio.countByIdPersona(idPersona);
+        if(tienePremios > 0) {
+            mensaje = "La persona posee premios asociados y no puede ser borrada";
+        } else {
+            repoPersonas.deleteById(idPersona);
+        }
+        return mensaje;
     }
 
     @Override
