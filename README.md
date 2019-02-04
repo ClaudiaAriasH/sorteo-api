@@ -24,9 +24,9 @@ Api para gestionar los sorteos.
 -	Crear las base de datos premiodb y las tablas Personas, Premios, y PremioxPersona con el script adjuntado en la ruta sorteo-api/scripts
 -	En el archivo de propiedades en la ruta sorteo-api/src/main/resources/application.properties. Se debe configurar:
 
-•	Se configura el driver según la versión de mySQL
+-	Se configura el driver según la versión de mySQL
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-•	Se configura la url de la base de datos, el usuario y la contraseña.
+-	Se configura la url de la base de datos, el usuario y la contraseña.
 spring.datasource.url=jdbc:mysql://localhost:3306/premiodb?useSSL=false
 spring.datasource.username=root
 spring.datasource.password=12345678
@@ -35,14 +35,14 @@ spring.datasource.password=12345678
 # Url servicios
 
 Personas:
-GET: http://localhost:8080/api/personas
-GET ByID: http://localhost:8080/api/personas/{id}
-POST: http://localhost:8080/api/personas
-PUT: http://localhost:8080/api/personas
-DELETE ByID: http://localhost:8080/api/personas/{id}
+- GET: http://localhost:8080/api/personas
+- GET ByID: http://localhost:8080/api/personas/{id}
+- POST: http://localhost:8080/api/personas
+- PUT: http://localhost:8080/api/personas
+- DELETE ByID: http://localhost:8080/api/personas/{id}
 
  Ganadores:
-GET: http://localhost:8080/api/sorteo
+- GET: http://localhost:8080/api/sorteo
 
 
 # Autor: Claudia Arias Hernandez
