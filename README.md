@@ -1,23 +1,24 @@
-# PruebaTecnica
-Prueba tecnica proceso de selección Comfenalco 
+# Prueba Técnica
+Prueba técnica proceso de selección Comfenalco 
 
 # Sorteo Premios
 Api para gestionar los sorteos.
 
 
 # ¿Qué puedo hacer?
--	Crear, modificar y eliminar personas en la base de datos mediante servicio rest.
+-	Crear, modificar y eliminar personas en la base de datos mediante servicio REST.
 -	Obtener los ganadores del sorteo de la base de datos según la especificaciones mediante servicio rest.
 
-# Tecnologias usadas:
--	Hibernate: Permiteta el mapeo de atributos de la base de datos relacional tradicional y el modelo de objetos de una aplicación.
--	Spring Boot: Inyección de dependecias y exposición de servicios, es una aplicación autocontenida que permite el despliegue de las aplicaciones usando su propio servidor.
--	Spring Data: Se encarga de simplificar al desarrollador la persistencia de datos contra distintos repositorios de información .
--	JPA: Define explícitamente la correlación relacional de objetos,
--	MySQL: Se utilizo MySQL 8.0 para crear las tablas Personas, Premios, y PremioxPersona.
+# Tecnologías usadas:
+-	Hibernate: Permite el mapeo de atributos de la base de datos relacional tradicional y el modelo de objetos de una aplicación.
+-	Spring Boot: Inyección de dependencias y exposición de servicios, es una aplicación autocontenida que permite el despliegue de las aplicaciones usando su propio servidor.
+-	Spring Data: Se encarga de simplificar al desarrollador la persistencia de datos contra distintos repositorios de información.
+-	JPA: Define explícitamente la correlación relacional de objetos.
+-	MySQL: Se utilizó MySQL 8.0 para crear las tablas Personas, Premios, y PremioxPersona.
 -	Maven: Permite la gestión y construcción de proyectos Java (mediante dependencias)
 -	CORS
 -	Java 8
+-   Se utilizó en patrón de inyección de dependencias.
 
 # Requisitos:
 -	Importar las dependencias ejecutando el mvn clean y mvn install.
